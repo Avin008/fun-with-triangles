@@ -1,0 +1,63 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
+
+body {
+  font-family: "Montserrat", sans-serif;
+}
+
+.container {
+  text-align: center;
+  padding: 1rem;
+  width: 80%;
+  margin: auto;
+}
+
+label {
+  display: block;
+  padding-top: 1rem;
+  padding-bottom: 0.3rem;
+}
+
+#is-triangle-btn {
+  margin-top: 1rem;
+  border-style: none;
+  padding: 1rem 1.5rem;
+  background-color: gray;
+  color: white;
+  font-weight: bold;
+}
+
+.navbar {
+  background-color: gray;
+  padding: 1rem;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+  padding-right: 1rem;
+}
+
+input {
+  padding: 0.5rem;
+}
+
+.labels {
+  display: inline;
+  padding-left: 1rem;
+}
+
+.question {
+  padding: 1rem;
+  border: 1px solid gray;
+  border-radius: 1rem;
+  margin: 1rem 0;
+}
+
+#sumbit-answer {
+  margin-top: 1rem;
+  border-style: none;
+  padding: 1rem 1.5rem;
+  background-color: gray;
+  color: white;
+  font-weight: bold;
+}
