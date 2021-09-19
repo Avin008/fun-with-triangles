@@ -42,18 +42,17 @@ input {
 
 .labels {
   display: inline;
-  padding-left: 1rem;
+  padding-left: 0.3rem;
 }
 
 .question {
   padding: 1rem;
   border: 1px solid gray;
   border-radius: 1rem;
-  margin: 1rem 0;
+  margin: 1rem;
 }
 
 #sumbit-answer {
-  margin-top: 1rem;
   border-style: none;
   padding: 1rem 1.5rem;
   background-color: gray;
