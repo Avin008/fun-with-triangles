@@ -7,7 +7,7 @@ body {
 
 .container {
   text-align: center;
-  padding: 0.5rem;
+  padding-top: 0.5rem;
 }
 
 label {
@@ -46,7 +46,7 @@ input {
 }
 
 .question {
-  padding: 0.5rem;
+  padding: 1rem;
   border: 1px solid gray;
   border-radius: 1rem;
   margin: 1rem 0;
