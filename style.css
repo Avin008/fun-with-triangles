@@ -46,7 +46,7 @@ input {
 }
 
 .question {
-  padding: 1rem;
+  padding: 1rem 0.5rem;
   border: 1px solid gray;
   border-radius: 1rem;
   margin: 1rem;
