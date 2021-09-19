@@ -17,41 +17,41 @@
 
     <div class="container">
       <h1>Triangle Quiz</h1>
-      <form action="#">
+      <form id="my-form">
         <div class="question">
           <p>
             What is the third angle for the triangle where angle1 = 45° and
             angle2 = 45°?
           </p>
           <label class="labels" for="answer"
-            ><input type="radio" value="45" name="answer" />45°</label
+            ><input type="radio" value="45" name="answerOne" />45°</label
           >
 
           <label class="labels" for="answer">
-            <input type="radio" value="60" name="answer" />60°</label
+            <input type="radio" value="60" name="answerOne" />60°</label
           >
 
           <label class="labels" for="answer">
-            <input type="radio" value="right angled" name="answer" />90°</label
+            <input type="radio" value="90" name="answerOne" />90°</label
           >
         </div>
         <div class="question">
           <p>If a triangle has an angle of 90 degrees, what is it called?</p>
-          <label class="labels" for="answer">
-            <input type="radio" value="obtuse" name="answer" />obtuse</label
+          <label class="labels" for="answerTwo">
+            <input type="radio" value="obtuse" name="answerTwo" />obtuse</label
           >
 
-          <label class="labels" for="answer">
-            <input type="radio" value="acute" name="answer" />acute</label
+          <label class="labels" for="answerTwo">
+            <input type="radio" value="acute" name="answerTwo" />acute</label
           >
 
-          <label class="labels" for="answer">
-            <input type="radio" value="right angled" name="answer" />right
+          <label class="labels" for="answerTwo">
+            <input type="radio" value="right angled" name="answerTwo" />right
             angled</label
           >
         </div>
-        <button id="sumbit-answer">Submit Answer</button>
       </form>
+      <button id="submit-btn">Submit</button>
       <h3 id="score-display">Score here!</h3>
     </div>
     <script src="/script.js"></script>
