@@ -33,7 +33,7 @@ label {
 a {
   color: white;
   text-decoration: none;
-  padding-left: 0.5rem;
+  padding-left: 0.8rem;
 }
 
 input {
@@ -62,6 +62,7 @@ input {
 
 .active {
   font-weight: bold;
+  text-decoration: underline;
 }
 
 /* -----hypotenuse-----------------  */
