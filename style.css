@@ -63,3 +63,24 @@ input {
 .active {
   font-weight: bold;
 }
+
+/* -----hypotenuse-----------------  */
+.formula {
+  font-size: 0.8rem;
+  border: 1px solid gray;
+  padding: 0.5rem 0;
+  width: 70%;
+  text-align: center;
+  margin: auto;
+}
+
+#check-hypotenuse {
+  border-style: none;
+  padding: 0.8rem;
+  background-color: gray;
+  color: white;
+  font-weight: bold;
+  margin-top: 1rem;
+}
+
+/*  ------------------------------- */
