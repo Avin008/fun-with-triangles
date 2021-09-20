@@ -91,10 +91,11 @@ function checkInputHypotenuse() {
     }
   }
 }
-
-hypotenuseBtn.addEventListener("click", function () {
-  checkInputHypotenuse();
-});
+if (hypotenuseBtn) {
+  hypotenuseBtn.addEventListener("click", function () {
+    checkInputHypotenuse();
+  });
+}
 
 function checkHypotenuse(a, b) {
   let sumOf = Number(a.value) ** 2 + Number(b.value) ** 2;
@@ -102,3 +103,37 @@ function checkHypotenuse(a, b) {
   displayHypotenuse.innerText = `The length of the hypotenuse is ${square} cm`;
 }
 // *** end of hypotenuse code *** //
+
+// *** start of area code *** //
+const base = document.querySelector("#base");
+const height = document.querySelector("#height");
+const displayArea = document.querySelector("#display-area");
+const checkAreaBtn = document.querySelector("#check-area-btn");
+
+if (checkAreaBtn) {
+  checkAreaBtn.addEventListener("click", function () {
+    checkInputArea();
+  });
+}
+
+function checkInputArea() {
+  if (isNaN(parseInt(base.value) && parseInt(height.value))) {
+    displayArea.innerText = "fields cannot be empty";
+  } else {
+    if ((Number(base.value) && Number(height.value)) === 0) {
+      displayArea.innerText = "values cannot be zero";
+    } else {
+      displayArea.innerText = `The area of the triangle is ${checkArea(
+        base,
+        height
+      )} cm²`;
+    }
+  }
+}
+
+function checkArea(base, height) {
+  let area = (1 / 2) * (base.value * height.value);
+  return area;
+}
+
+// *** end of area code ***//

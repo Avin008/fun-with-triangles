@@ -52,7 +52,7 @@ input {
   margin: 1rem;
 }
 
-#sumbit-answer {
+#submit-btn {
   border-style: none;
   padding: 1rem 1.5rem;
   background-color: gray;
@@ -85,3 +85,11 @@ input {
 }
 
 /*  ------------------------------- */
+#check-area-btn {
+  border-style: none;
+  padding: 0.8rem;
+  background-color: gray;
+  color: white;
+  font-weight: bold;
+  margin-top: 1rem;
+}
