@@ -24,7 +24,7 @@ function checkInput() {
         Number(angleTwo.value) &&
         Number(angleThree.value)) === 0
     ) {
-      outputBox.innerText = "value cannot be Zero";
+      outputBox.innerText = "Angles can't be zeroes";
     } else {
       calculateSumOfAngles(angleOne, angleTwo, angleThree);
     }
@@ -49,14 +49,16 @@ const scoreDisplay = document.querySelector("#score-display");
 const submitBtn = document.querySelector("#submit-btn");
 const correctAnswers = ["90", "right angled"];
 
-submitBtn.addEventListener("click", function () {
-  const formData = new FormData(form);
-  let userAnswers = [];
-  for (let value of formData.values()) {
-    userAnswers.push(value);
-  }
-  checkAnswer(correctAnswers, userAnswers);
-});
+if (submitBtn) {
+  submitBtn.addEventListener("click", function () {
+    const formData = new FormData(form);
+    let userAnswers = [];
+    for (let value of formData.values()) {
+      userAnswers.push(value);
+    }
+    checkAnswer(correctAnswers, userAnswers);
+  });
+}
 
 function checkAnswer(correctAnswers, userAnswers) {
   let score = 0;
@@ -67,5 +69,36 @@ function checkAnswer(correctAnswers, userAnswers) {
       score;
     }
   }
-  scoreDisplay.innerText = `Your Score is ${score}`;
+  scoreDisplay.innerText = `Your Score is ${score} / ${correctAnswers.length}`;
 }
+
+// *** end of quiz app code ***//
+
+// *** start of Hypotenuse code *** //
+const a = document.querySelector("#hypotenuse-angle-one");
+const b = document.querySelector("#hypotenuse-angle-two");
+const displayHypotenuse = document.querySelector("#display-hypotenuse");
+const hypotenuseBtn = document.querySelector("#check-hypotenuse");
+
+function checkInputHypotenuse() {
+  if (isNaN(parseInt(a.value) && parseInt(b.value))) {
+    displayHypotenuse.innerText = "fields cannot be empty";
+  } else {
+    if ((Number(a.value) && Number(b.value)) === 0) {
+      displayHypotenuse.innerText = "values cannot be zero";
+    } else {
+      checkHypotenuse(a, b);
+    }
+  }
+}
+
+hypotenuseBtn.addEventListener("click", function () {
+  checkInputHypotenuse();
+});
+
+function checkHypotenuse(a, b) {
+  let sumOf = Number(a.value) ** 2 + Number(b.value) ** 2;
+  let square = Math.sqrt(sumOf);
+  displayHypotenuse.innerText = `The length of the hypotenuse is ${square} cm`;
+}
+// *** end of hypotenuse code *** //
