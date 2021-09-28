@@ -2,45 +2,61 @@ const angleOne = document.querySelector("#angle-one");
 const angleTwo = document.querySelector("#angle-two");
 const angleThree = document.querySelector("#angle-three");
 const isTriangleBtn = document.querySelector("#is-triangle-btn");
-const outputBox = document.querySelector("#output-box");
+const outputDisplay = document.querySelector("#output-box");
 
 // *** start of is a triangle code***
 if (isTriangleBtn) {
-  isTriangleBtn.addEventListener("click", checkInput);
+  isTriangleBtn.addEventListener("click", function () {
+    checkInput(angleOne, angleTwo, angleThree);
+  });
 }
 
-function checkInput() {
-  if (
-    isNaN(
-      parseInt(angleOne.value) &&
-        parseInt(angleTwo.value) &&
-        parseInt(angleThree.value)
-    )
-  ) {
-    outputBox.innerText = "fields cannot be empty";
-  } else {
+// function checkInput() {
+//   if (
+//     isNaN(
+//       parseInt(angleOne.value) &&
+//         parseInt(angleTwo.value) &&
+//         parseInt(angleThree.value)
+//     )
+//   ) {
+//     outputDisplay.innerText = "fields cannot be empty";
+//   } else {
+//     if (
+//       (Number(angleOne.value) &&
+//         Number(angleTwo.value) &&
+//         Number(angleThree.value)) === 0
+//     ) {
+//       outputDisplay.innerText = "Angles can't be zeroes";
+//     } else {
+//       calculateSumOfAngles(angleOne, angleTwo, angleThree);
+//     }
+//   }
+// }
+
+function checkInput(inputOne, inputTwo, inputThree) {
+  if (inputOne.value && inputTwo.value && inputThree.value) {
     if (
-      (Number(angleOne.value) &&
-        Number(angleTwo.value) &&
-        Number(angleThree.value)) === 0
+      Number(inputOne.value) > 0 &&
+      Number(inputTwo.value) > 0 &&
+      Number(inputThree.value) > 0
     ) {
-      outputBox.innerText = "Angles can't be zeroes";
+      //calculate
+      calculateSumOfAngles(inputOne, inputTwo, inputThree);
     } else {
-      calculateSumOfAngles(angleOne, angleTwo, angleThree);
+      outputDisplay.innerText = "Input Value cannot be less than 1";
     }
+  } else {
+    outputDisplay.innerText = "input fields cannot be empty";
   }
 }
-
-
-
 
 function calculateSumOfAngles(valueOne, valueTwo, valueThree) {
   let sumofAngles =
     Number(valueOne.value) + Number(valueTwo.value) + Number(valueThree.value);
   if (sumofAngles === 180) {
-    outputBox.innerText = "Is a Triangle";
+    outputDisplay.innerText = "Is a Triangle";
   } else {
-    outputBox.innerText = "Not a Triangle";
+    outputDisplay.innerText = "Not a Triangle";
   }
 }
 
@@ -83,20 +99,34 @@ const b = document.querySelector("#hypotenuse-angle-two");
 const displayHypotenuse = document.querySelector("#display-hypotenuse");
 const hypotenuseBtn = document.querySelector("#check-hypotenuse");
 
-function checkInputHypotenuse() {
-  if (isNaN(parseInt(a.value) && parseInt(b.value))) {
-    displayHypotenuse.innerText = "fields cannot be empty";
-  } else {
-    if ((Number(a.value) && Number(b.value)) === 0) {
-      displayHypotenuse.innerText = "values cannot be zero";
+// function checkInputHypotenuse() {
+//   if (isNaN(parseInt(a.value) && parseInt(b.value))) {
+//     displayHypotenuse.innerText = "fields cannot be empty";
+//   } else {
+//     if ((Number(a.value) && Number(b.value)) === 0) {
+//       displayHypotenuse.innerText = "values cannot be zero";
+//     } else {
+//       checkHypotenuse(a, b);
+//     }
+//   }
+// }
+
+function checkInputHypotenuse(inputOne, inputTwo, outputDisplay) {
+  if (inputOne.value && inputTwo.value) {
+    if (Number(inputOne.value) > 0 && Number(inputTwo.value) > 0) {
+      //calculate
+      checkHypotenuse(inputOne, inputTwo);
     } else {
-      checkHypotenuse(a, b);
+      outputDisplay.innerText = "Input Value cannot be less than 1";
     }
+  } else {
+    outputDisplay.innerText = "input fields cannot be empty";
   }
 }
+
 if (hypotenuseBtn) {
   hypotenuseBtn.addEventListener("click", function () {
-    checkInputHypotenuse();
+    checkInputHypotenuse(a, b, displayHypotenuse);
   });
 }
 
@@ -115,22 +145,38 @@ const checkAreaBtn = document.querySelector("#check-area-btn");
 
 if (checkAreaBtn) {
   checkAreaBtn.addEventListener("click", function () {
-    checkInputArea();
+    checkInputArea(base, height, displayArea);
   });
 }
 
-function checkInputArea() {
-  if (isNaN(parseInt(base.value) && parseInt(height.value))) {
-    displayArea.innerText = "fields cannot be empty";
-  } else {
-    if ((Number(base.value) && Number(height.value)) === 0) {
-      displayArea.innerText = "values cannot be zero";
-    } else {
+// function checkInputArea() {
+//   if (isNaN(parseInt(base.value) && parseInt(height.value))) {
+//     displayArea.innerText = "fields cannot be empty";
+//   } else {
+//     if ((Number(base.value) && Number(height.value)) === 0) {
+//       displayArea.innerText = "values cannot be zero";
+//     } else {
+//       displayArea.innerText = `The area of the triangle is ${checkArea(
+//         base,
+//         height
+//       )} cm²`;
+//     }
+//   }
+// }
+
+function checkInputArea(inputOne, inputTwo, outputDisplay) {
+  if (inputOne.value && inputTwo.value) {
+    if (Number(inputOne.value) > 0 && Number(inputTwo.value) > 0) {
+      //calculate
       displayArea.innerText = `The area of the triangle is ${checkArea(
         base,
         height
       )} cm²`;
+    } else {
+      outputDisplay.innerText = "Input Value cannot be less than 1";
     }
+  } else {
+    outputDisplay.innerText = "input fields cannot be empty";
   }
 }
 
