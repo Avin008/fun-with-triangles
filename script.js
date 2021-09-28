@@ -9,25 +9,43 @@ if (isTriangleBtn) {
   isTriangleBtn.addEventListener("click", checkInput);
 }
 
-function checkInput() {
-  if (
-    isNaN(
-      parseInt(angleOne.value) &&
-        parseInt(angleTwo.value) &&
-        parseInt(angleThree.value)
-    )
-  ) {
-    outputBox.innerText = "fields cannot be empty";
-  } else {
+// function checkInput() {
+//   if (
+//     isNaN(
+//       parseInt(angleOne.value) &&
+//         parseInt(angleTwo.value) &&
+//         parseInt(angleThree.value)
+//     )
+//   ) {
+//     outputBox.innerText = "fields cannot be empty";
+//   } else {
+//     if (
+//       (Number(angleOne.value) &&
+//         Number(angleTwo.value) &&
+//         Number(angleThree.value)) === 0
+//     ) {
+//       outputBox.innerText = "Angles can't be zeroes";
+//     } else {
+//       calculateSumOfAngles(angleOne, angleTwo, angleThree);
+//     }
+//   }
+// }
+
+
+function checkInput(inputOne, inputTwo, inputThree) {
+  if (inputOne.value && inputTwo.value && inputThree.value) {
     if (
-      (Number(angleOne.value) &&
-        Number(angleTwo.value) &&
-        Number(angleThree.value)) === 0
+      Number(inputOne.value) > 0 &&
+      Number(inputTwo.value) > 0 &&
+      Number(inputThree.value) > 0
     ) {
-      outputBox.innerText = "Angles can't be zeroes";
+      //calculate
+      calculateSumOfAngles(inputOne, inputTwo, inputThree);
     } else {
-      calculateSumOfAngles(angleOne, angleTwo, angleThree);
+      outputBox.innerText = "Input Value cannot be less than 1";
     }
+  } else {
+    outputBox.innerText = "input fields cannot be empty";
   }
 }
 
