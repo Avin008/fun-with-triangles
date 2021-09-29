@@ -38,6 +38,8 @@ a {
 
 input {
   padding: 0.5rem;
+  border-style: none;
+  border: 2px solid gray;
 }
 
 .labels {
@@ -92,4 +94,10 @@ input {
   color: white;
   font-weight: bold;
   margin-top: 1rem;
+}
+
+#github {
+  color: black;
+  text-align: center;
+  font-size: 2.5rem;
 }
