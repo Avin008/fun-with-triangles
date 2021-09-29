@@ -66,7 +66,13 @@ function calculateSumOfAngles(valueOne, valueTwo, valueThree) {
 const form = document.querySelector("#my-form");
 const scoreDisplay = document.querySelector("#score-display");
 const submitBtn = document.querySelector("#submit-btn");
-const correctAnswers = ["90", "right angled"];
+const correctAnswers = [
+  "90",
+  "right angled",
+  "Isosceles triangle",
+  "One obtuse angles",
+  "687.5",
+];
 
 if (submitBtn) {
   submitBtn.addEventListener("click", function () {
