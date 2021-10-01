@@ -139,7 +139,9 @@ if (hypotenuseBtn) {
 function checkHypotenuse(a, b) {
   let sumOf = Number(a.value) ** 2 + Number(b.value) ** 2;
   let square = Math.sqrt(sumOf);
-  displayHypotenuse.innerText = `The length of the hypotenuse is ${square} cm`;
+  displayHypotenuse.innerText = `The length of the hypotenuse is ${square.toFixed(
+    2
+  )} cm`;
 }
 // *** end of hypotenuse code *** //
 
