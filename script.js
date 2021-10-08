@@ -11,27 +11,7 @@ if (isTriangleBtn) {
   });
 }
 
-// function checkInput() {
-//   if (
-//     isNaN(
-//       parseInt(angleOne.value) &&
-//         parseInt(angleTwo.value) &&
-//         parseInt(angleThree.value)
-//     )
-//   ) {
-//     outputDisplay.innerText = "fields cannot be empty";
-//   } else {
-//     if (
-//       (Number(angleOne.value) &&
-//         Number(angleTwo.value) &&
-//         Number(angleThree.value)) === 0
-//     ) {
-//       outputDisplay.innerText = "Angles can't be zeroes";
-//     } else {
-//       calculateSumOfAngles(angleOne, angleTwo, angleThree);
-//     }
-//   }
-// }
+
 
 function checkInput(inputOne, inputTwo, inputThree) {
   if (inputOne.value && inputTwo.value && inputThree.value) {
@@ -105,17 +85,7 @@ const b = document.querySelector("#hypotenuse-angle-two");
 const displayHypotenuse = document.querySelector("#display-hypotenuse");
 const hypotenuseBtn = document.querySelector("#check-hypotenuse");
 
-// function checkInputHypotenuse() {
-//   if (isNaN(parseInt(a.value) && parseInt(b.value))) {
-//     displayHypotenuse.innerText = "fields cannot be empty";
-//   } else {
-//     if ((Number(a.value) && Number(b.value)) === 0) {
-//       displayHypotenuse.innerText = "values cannot be zero";
-//     } else {
-//       checkHypotenuse(a, b);
-//     }
-//   }
-// }
+
 
 function checkInputHypotenuse(inputOne, inputTwo, outputDisplay) {
   if (inputOne.value && inputTwo.value) {
@@ -157,20 +127,7 @@ if (checkAreaBtn) {
   });
 }
 
-// function checkInputArea() {
-//   if (isNaN(parseInt(base.value) && parseInt(height.value))) {
-//     displayArea.innerText = "fields cannot be empty";
-//   } else {
-//     if ((Number(base.value) && Number(height.value)) === 0) {
-//       displayArea.innerText = "values cannot be zero";
-//     } else {
-//       displayArea.innerText = `The area of the triangle is ${checkArea(
-//         base,
-//         height
-//       )} cm²`;
-//     }
-//   }
-// }
+
 
 function checkInputArea(inputOne, inputTwo, outputDisplay) {
   if (inputOne.value && inputTwo.value) {
