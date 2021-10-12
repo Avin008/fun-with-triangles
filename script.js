@@ -11,8 +11,6 @@ if (isTriangleBtn) {
   });
 }
 
-
-
 function checkInput(inputOne, inputTwo, inputThree) {
   if (inputOne.value && inputTwo.value && inputThree.value) {
     if (
@@ -61,7 +59,11 @@ if (submitBtn) {
     for (let value of formData.values()) {
       userAnswers.push(value);
     }
-    checkAnswer(correctAnswers, userAnswers);
+    if (userAnswers.length < 5) {
+      scoreDisplay.innerText = "Please attend all questions";
+    } else {
+      checkAnswer(correctAnswers, userAnswers);
+    }
   });
 }
 
@@ -84,8 +86,6 @@ const a = document.querySelector("#hypotenuse-angle-one");
 const b = document.querySelector("#hypotenuse-angle-two");
 const displayHypotenuse = document.querySelector("#display-hypotenuse");
 const hypotenuseBtn = document.querySelector("#check-hypotenuse");
-
-
 
 function checkInputHypotenuse(inputOne, inputTwo, outputDisplay) {
   if (inputOne.value && inputTwo.value) {
@@ -126,8 +126,6 @@ if (checkAreaBtn) {
     checkInputArea(base, height, displayArea);
   });
 }
-
-
 
 function checkInputArea(inputOne, inputTwo, outputDisplay) {
   if (inputOne.value && inputTwo.value) {
