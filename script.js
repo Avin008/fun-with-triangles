@@ -6,37 +6,31 @@ const outputDisplay = document.querySelector("#output-box");
 
 // *** start of is a triangle code***
 if (isTriangleBtn) {
-  isTriangleBtn.addEventListener("click", function () {
-    checkInput(angleOne, angleTwo, angleThree);
-  });
+  isTriangleBtn.addEventListener("click", () =>
+    checkInput(angleOne, angleTwo, angleThree)
+  );
 }
 
-function checkInput(inputOne, inputTwo, inputThree) {
-  if (inputOne.value && inputTwo.value && inputThree.value) {
-    if (
-      Number(inputOne.value) > 0 &&
+const checkInput = (inputOne, inputTwo, inputThree) => {
+  //checking input
+
+  !(inputOne.value && inputTwo.value && inputThree.value)
+    ? (outputDisplay.innerText = "input fields cannot be empty")
+    : Number(inputOne.value) > 0 &&
       Number(inputTwo.value) > 0 &&
       Number(inputThree.value) > 0
-    ) {
-      //calculate
-      calculateSumOfAngles(inputOne, inputTwo, inputThree);
-    } else {
-      outputDisplay.innerText = "Input Value cannot be less than 1";
-    }
-  } else {
-    outputDisplay.innerText = "input fields cannot be empty";
-  }
-}
+    ? calculateSumOfAngles(inputOne, inputTwo, inputThree)
+    : (outputDisplay.innerText = "Input Value cannot be less than 1");
+};
 
-function calculateSumOfAngles(valueOne, valueTwo, valueThree) {
+const calculateSumOfAngles = (valueOne, valueTwo, valueThree) => {
   let sumofAngles =
     Number(valueOne.value) + Number(valueTwo.value) + Number(valueThree.value);
-  if (sumofAngles === 180) {
-    outputDisplay.innerText = "Is a Triangle";
-  } else {
-    outputDisplay.innerText = "Not a Triangle";
-  }
-}
+
+  sumofAngles === 180
+    ? (outputDisplay.innerText = "Is a Triangle")
+    : (outputDisplay.innerText = "Not a Triangle");
+};
 
 // *** end of is a triangle code *** //
 
@@ -53,21 +47,20 @@ const correctAnswers = [
 ];
 
 if (submitBtn) {
-  submitBtn.addEventListener("click", function () {
+  submitBtn.addEventListener("click", () => {
     const formData = new FormData(form);
     let userAnswers = [];
     for (let value of formData.values()) {
       userAnswers.push(value);
     }
-    if (userAnswers.length < 5) {
-      scoreDisplay.innerText = "Please attend all questions";
-    } else {
-      checkAnswer(correctAnswers, userAnswers);
-    }
+
+    userAnswers.length < 5
+      ? (scoreDisplay.innerText = "Please attend all questions")
+      : checkAnswer(correctAnswers, userAnswers);
   });
 }
 
-function checkAnswer(correctAnswers, userAnswers) {
+const checkAnswer = (correctAnswers, userAnswers) => {
   let score = 0;
   for (let x = 0; x < userAnswers.length; x++) {
     if (correctAnswers[x] == userAnswers[x]) {
@@ -77,7 +70,7 @@ function checkAnswer(correctAnswers, userAnswers) {
     }
   }
   scoreDisplay.innerText = `Your Score is ${score} / ${correctAnswers.length}`;
-}
+};
 
 // *** end of quiz app code ***//
 
@@ -101,18 +94,18 @@ function checkInputHypotenuse(inputOne, inputTwo, outputDisplay) {
 }
 
 if (hypotenuseBtn) {
-  hypotenuseBtn.addEventListener("click", function () {
+  hypotenuseBtn.addEventListener("click", () => {
     checkInputHypotenuse(a, b, displayHypotenuse);
   });
 }
 
-function checkHypotenuse(a, b) {
+const checkHypotenuse = (a, b) => {
   let sumOf = Number(a.value) ** 2 + Number(b.value) ** 2;
   let square = Math.sqrt(sumOf);
   displayHypotenuse.innerText = `The length of the hypotenuse is ${square.toFixed(
     2
   )} cm`;
-}
+};
 // *** end of hypotenuse code *** //
 
 // *** start of area code *** //
@@ -122,12 +115,12 @@ const displayArea = document.querySelector("#display-area");
 const checkAreaBtn = document.querySelector("#check-area-btn");
 
 if (checkAreaBtn) {
-  checkAreaBtn.addEventListener("click", function () {
+  checkAreaBtn.addEventListener("click", () => {
     checkInputArea(base, height, displayArea);
   });
 }
 
-function checkInputArea(inputOne, inputTwo, outputDisplay) {
+const checkInputArea = (inputOne, inputTwo, outputDisplay) => {
   if (inputOne.value && inputTwo.value) {
     if (Number(inputOne.value) > 0 && Number(inputTwo.value) > 0) {
       //calculate
@@ -141,11 +134,11 @@ function checkInputArea(inputOne, inputTwo, outputDisplay) {
   } else {
     outputDisplay.innerText = "input fields cannot be empty";
   }
-}
+};
 
-function checkArea(base, height) {
+const checkArea = (base, height) => {
   let area = (1 / 2) * (base.value * height.value);
   return area;
-}
+};
 
 // *** end of area code ***//
